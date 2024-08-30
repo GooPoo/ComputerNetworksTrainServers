@@ -1,0 +1,101 @@
+<!-- Student 1: Benjamin Lee 22252344
+Student 2: Olivia Morrison 23176135
+Student 3: Min Thit 23375069
+Student 4: Johnson Che 23403302 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Welcome</title>
+    </head>
+    <body>
+        <h1> Welcome to the Transperth Station Server! </h1>
+        <h2><span id="station_name"></span></h2>
+        <p>Plan your Journey</p>
+
+        <form id="stationGOTO">
+            <label for="stationPreset">End Station:</label>
+            <select id="stationPreset" name="stationPreset">
+                <option value="TerminalA">TerminalA</option>
+                <option value="JunctionB">JunctionB</option>
+                <option value="BusportC">BusportC</option>
+            </select>
+
+            <label for="time">Leave After (24-hour format):</label>
+            <input type="text" id="time" name="time" pattern="[0-9]{2}:[0-9]{2}" placeholder="HH:MM" required>
+
+            <br><br>
+        </form>
+        <button id="sendStationGoTo">Submit Journey</button>
+        <button id="sendButton">Info on Neighbours</button>
+        <button id="getTTDataButton">Get Timetable Data</button>
+        <p id="journeyResult"></p>
+        <p id="neighbourINFO"></p>
+        <p id="TTData"></p>
+        <br>
+        <button id="closesockets">Close Sockets</button>
+    </body>
+    <script>
+        document.getElementById("sendStationGoTo").addEventListener("click", function() {
+            findJourney();
+        });
+
+        document.getElementById("sendButton").addEventListener("click", function() {
+            neighbourGetInfo();
+        });
+
+        document.getElementById("getTTDataButton").addEventListener("click", function() {
+            displayData();
+        });
+
+        document.getElementById("closesockets").addEventListener("click", function() {
+            closeSockets();
+        });
+
+        function findJourney() {
+            document.getElementById("journeyResult").innerHTML = "NO ROUTE TO STATION FOUND";            
+            var selectedPreset = document.getElementById("stationPreset").value;
+            var selectedTime = document.getElementById("time").value;
+            console.log(selectedPreset);
+            console.log(selectedTime);
+
+            var fJ = new XMLHttpRequest();
+            fJ.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("journeyResult").innerHTML = this.responseText;
+                }
+            };
+            fJ.open("POST", "/findJourneyResult", true);
+            fJ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            fJ.send("stationPreset=" + selectedPreset + "&time=" + selectedTime);
+        }
+
+        function neighbourGetInfo() {
+            var dataReq = new XMLHttpRequest();
+            dataReq.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("neighbourINFO").innerHTML = this.responseText;
+                }
+            };
+            dataReq.open("POST", "/info-neighbours", true);
+            dataReq.send();
+        }
+
+        function displayData() {
+            var dataReq = new XMLHttpRequest();
+            dataReq.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("TTData").innerHTML = this.responseText;
+                }
+            };
+            dataReq.open("POST", "/timetable-data", true);
+            dataReq.send();
+        }
+
+        function closeSockets() {
+            var dataReq = new XMLHttpRequest();
+            dataReq.open("POST", "/close-sockets", true);
+            dataReq.send();
+        }
+    </script>
+</html>

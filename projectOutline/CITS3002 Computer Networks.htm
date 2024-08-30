@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link media="all" href="CITS3002%20Computer%20Networks_files/cits3002.css" type="text/css" rel="stylesheet">
+    <title>CITS3002 Computer Networks</title>
+<link href="data:text/css,%3Ais(%5Bid*%3D'google_ads_iframe'%5D%2C%5Bid*%3D'taboola-'%5D%2C.taboolaHeight%2C.taboola-placeholder%2C%23credential_picker_container%2C%23credentials-picker-container%2C%23credential_picker_iframe%2C%5Bid*%3D'google-one-tap-iframe'%5D%2C%23google-one-tap-popup-container%2C.google-one-tap-modal-div%2C%23amp_floatingAdDiv%2C%23ez-content-blocker-container)%20%7Bdisplay%3Anone!important%3Bmin-height%3A0!important%3Bheight%3A0!important%3B%7D" rel="stylesheet" type="text/css"></head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; margin: 0;">
+
+
+<style>
+p.leftmenu {
+    margin-left:        0.5em;
+    margin-right:       0.5em;
+    border-bottom:      1px solid #ddd;
+}
+div.blueblock {
+    background:		#e7f5fe;
+    color:              black;
+    border:             1px solid blue;
+    border-radius:      8px;
+
+    margin-left:        2em;
+    margin-right:       2em;
+    padding:            0.5em;
+    line-height:        1.2;
+}
+
+div.redblock {
+    background:		#ffe6e6;
+    color:              black;
+    border:             1px solid red;
+    border-radius:      8px;
+
+    margin-left:        2em;
+    margin-right:       2em;
+    padding:            0.5em;
+    line-height:        1.2;
+}
+
+.r0 {
+    background:         #214793;
+    color:		white;
+    text-align:		center;
+    padding:		6px;
+}
+.r1 {
+    background:		#ccc;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r2 {
+    background:		white;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r3 {
+    background:         #e7f5fe;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r4 {
+    background:         #d3dcf8;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.tute {
+    color:		white;
+    background:		#ff471a;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.consult {
+    color:		black;
+    background:		gold;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.lect {
+    color:		white;
+    background:		#0047b3;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.lab {
+    color:		white;
+    background:		#00b2b2;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+</style>
+
+
+<table style="width: 100%; background: #214793;">
+<tbody><tr style="height: 72px;">
+    <td style="color: white; text-align: left; vertical-align: middle;">
+        <img style="height: 48px;" src="CITS3002%20Computer%20Networks_files/uwacrest.png">
+    </td>
+    <td style="color: white; font-size: 1.3em; text-align: right; vertical-align: middle; white-space: nowrap;">
+        CITS3002 Computer Networks&nbsp;&nbsp;
+    </td>
+</tr>
+<tr>
+    <td colspan="2" style="background: #e0b500; width: 100%; height: 2px;">
+    </td>
+</tr>
+</tbody></table>
+
+<div style="font-size: 1.0em; text-align: left; width: 98%;">
+
+<!-- ----------------- BOTTOM-OF-HEADER ----------------------------- -->
+
+<table style="margin: 0px; padding: 0;"><tbody><tr>
+<td style="padding: 0 1em 0 0; white-space: nowrap; width: 12em; vertical-align: top;">
+
+&nbsp;<p>
+
+</p><p class="leftmenu"><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/index.php">Unit home</a></p>
+
+<!--
+<p class='leftmenu'><a
+href='https://teaching.csse.uwa.edu.au/units/CITS3002/examinations.php'><span
+style='color: red;'><b>Final exam</b></span></a></p>
+-->
+
+<p class="leftmenu"><a href="https://secure.csse.uwa.edu.au/run/help3002">help3002</a></p>
+
+<p class="leftmenu"><a href="https://lms.uwa.edu.au/ultra/courses/_91722_1/cl/outline">Lecture recordings<br>via LMS</a></p>
+
+<p class="leftmenu"><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/schedule.php">Schedule</a></p>
+
+<p class="leftmenu"><a href="https://lms.uwa.edu.au/bbcswebdav/institution/Unit_Outlines_2024/CITS3002_SEM-1_2024/CITS3002_SEM-1_2024_UnitOutline.html">Unit outline</a></p>
+
+<p class="leftmenu"><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/resources.php">Resources</a></p>
+
+<p class="leftmenu"><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/books.php">Textbooks</a></p>
+
+<p class="leftmenu"><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/extra-reading.php">Extra reading</a></p>
+
+<p class="leftmenu"><br><br><a href="https://teaching.csse.uwa.edu.au/units/CITS3002/wellbeing.php"><span style="color: green;"><b>Look after yourself!</b></span></a></p>
+
+</td><td style="vertical-align: top; margin-left: 8em;">
+
+<h3>Practical project 2024</h3>
+
+<b>(due 11:59pm Fri 17th May - end of week 11)</b>
+<p></p>
+
+<!--
+<img src="../images/underconstruction.gif">
+<br>
+-->
+
+<p>
+See also:
+<a href="https://teaching.csse.uwa.edu.au/units/CITS3002/project2024/getting-started.php"><span style="font-size: 1.2em; color: blue;"><b>Getting Started</b></span></a>
+and
+<a href="https://teaching.csse.uwa.edu.au/units/CITS3002/project2024/clarifications.php"><span style="font-size: 1.2em; color: blue;"><b>Clarifications (12/5)</b></span></a>
+</p>
+
+<div class="blueblock">
+<b>The goal</b> of this project is to develop a <i>server application</i>
+supporting queries about bus and train routes,
+such as those in the Transperth transport network.
+
+By successfully completing the project,
+you will have a greater understanding of
+the standard TCP and UDP protocols running over IP,
+communication between web-browsers and application programs using HTTP and HTML,
+and will have developed a simple text-based protocol to
+make and reply to queries for distributed information.
+</div>
+
+<p>
+A transport network can be considered as a connected graph -
+the bus and train stations are nodes in the graph,
+and the bus and train routes are links joining the stations.
+Multiple bus and train trips commence at different times
+throughout the day,
+and pairs of stations are connected by multiple bus and train routes.
+</p>
+<p>
+In this project:
+</p>
+
+<ul>
+<li>
+    each bus or train station will be represented by an executing instance
+    of a
+    <span style="background: yellow; padding: 2px;">station server</span>
+    (software).
+    Each station server will be a distinct operating system process
+    (not a thread within a single process).
+    Each station server runs the same software,
+    but manages its own data and network connections.
+<p></p>
+</li>
+
+<li>
+    a standard web-browser will provide the human-facing interface to each server,
+    so this project doesn't require the development of client software.
+    However, a small amount of basic HTML code will need to be developed to
+    support the interface through the browser.
+<p></p>
+</li>
+
+<li>
+    a very simple webpage (rendered via a web-browser)
+    will accept queries to find the sequence of buses and trains (a journey)
+    to travel from one bus or train station to another.
+    The web-browser will transmit the query to the instance of the
+    station server (software) representing the
+    <span style="background: yellow; padding: 2px;">source station</span>
+    (presumably one close to the user's home),
+    asking it how to travel to a
+    <span style="background: yellow; padding: 2px;">destination station</span>.
+<p></p>
+</li>
+
+<li>
+    each bus or train station server only maintains the timetable information
+    of buses and trains <i>leaving</i> that station,
+    including the destination of each,
+    and the (multiple) times throughout each day that each bus leaves the
+    station and arrives at the destination.
+<p></p>
+</li>
+
+<li>
+    if the source and destination stations
+    are directly connected (via a single bus or train trip),
+    then the <i>source station</i> server will be able to immediately
+    respond to the query because it has all necessary information.
+<p></p>
+</li>
+
+<li>
+    if, however,
+    the source and destination stations are <i>not</i> directly connected,
+    the passenger will have to travel via two or more buses or trains,
+    transferring at intermediate station(s).
+    Because each station server only knows about buses and trains leaving that station,
+    it will need to ask other stations' servers for information about the next
+    segment (or hop) of the whole journey.
+<p></p>
+</li>
+
+<li>
+    the result (the answer) returned from the <i>source station</i> back to the
+    web-browser will indicate -
+see the
+<a href="https://teaching.csse.uwa.edu.au/units/CITS3002/project2024/clarifications.php"><b>project clarifications</b></a> webpage
+(5th May).
+<br>
+    <strike>the number,
+    and departure time of the
+    next bus or train leaving the <i>source station</i>
+    that enables the passenger to reach the required <i>destination station</i>,
+    and the expected final arrival time at the destination.</strike>
+<p></p>
+</li>
+
+<li>
+    Ideally,
+    the returned result will be the <i>fastest</i> journey -
+    even if it leaves later or includes more segments (hops) than other journeys
+    (but firstly, just report <i>any</i> any valid journey!)
+<p></p>
+</li>
+
+</ul>
+
+
+<h4>Networking details</h4>
+
+<ol>
+<li> each <i>station server</i>
+will run as a separate operating system process (not a thread in a single process).
+<p></p>
+</li>
+
+<li> <i>station servers</i> will execute on one or more computers.
+Command-line arguments specify the host names and networking ports that each 
+should use.
+<p></p>
+
+<p>
+A typical invocation of two <i>station server</i> processes is:
+</p>
+
+<p class="code">
+<span style="font-weight: bold; color: blue;">shell&gt;&nbsp;</span> ./station-server
+<br>
+Usage: 
+./station-server&nbsp;&nbsp;station-name&nbsp;&nbsp;browser-
+port&nbsp;&nbsp;query-port&nbsp;&nbsp;neighbour1&nbsp;&nbsp;[neighbour2 
+...]
+<br>
+<br>
+<span style="font-weight: bold; color: blue;">shell&gt;&nbsp;</span> ./station-server
+Warwick-Stn&nbsp;&nbsp;2401&nbsp;&nbsp;2408&nbsp;&nbsp;hostname2:2560&nbsp;&nbsp;hostname3:2566 .... &amp; <br>
+<br>
+<span style="font-weight: bold; color: blue;">shell&gt;&nbsp;</span> 
+./station-server.py 
+Greenwood-
+Stn&nbsp;&nbsp;2402&nbsp;&nbsp;2560&nbsp;&nbsp;hostname4:2567&nbsp;&nbsp;hostname1:2408 ....
+ &amp;
+</p>
+
+<p>
+which indicates that the first process (a compiled C program)
+will manage the data of the station named "Warwick-Stn",
+will receive queries from web-browsers using TCP/IP port 2401,
+will receive datagrams from other stations using UDP/IP port 2408,
+and that "Warwick-Stn" is 'physically adjacent' to 2 other stations,
+executing on <i>host2</i> and <i>host3</i>,
+which are receiving station-to-station datagrams on UDP/IP ports 2560 and 2566, respectively.
+</p>
+
+<p>
+The second server process (a Python script)
+will similarly manage the data of the station named "Greenwood-Stn",
+and is 'physically adjacent' to "Warwick-Stn".
+</p>
+
+<p>
+Notice, also,
+that both processes have been 'started in the background',
+because neither needs to remain connected to the invoking keyboard.
+</p>
+</li>
+
+<li> each <i>station server</i> will accept queries about its timetable
+data from a standard web-browser (a passenger making a query from their mobile phone).
+
+The query and reply will be transmitted using the
+(minimum amount necessary of the) HTTP protocol,
+the Hypertext Markup Language (HTML),
+carried over a bidirectional TCP/IP connection.
+After the exchange of each query and its response
+the <i>station server</i> must close the connection.
+<p></p>
+</li>
+
+<li> <i>station servers</i> will communicate with adjacent stations,
+if necessary,
+using UDP/IP datagrams.
+<p></p>
+</li>
+
+<li> no <i>station server</i> should ever contain all knowledge about
+the whole network,
+timetabling data,
+or network connections.
+
+Each station's timetabling data,
+recorded in one textfile for each station,
+may change at any time
+(for example, if a bus breaks down, its next trip will be cancelled).
+Every query arriving at a <i>station server</i> (via a UDP/IP datagram)
+should be answered using the current up-to-date timetable information for that station.
+<p></p>
+</li>
+</ol>
+<p></p>
+
+
+<h4>Constraints</h4>
+The <b>constraints</b> of the project require that:
+<p></p>
+
+<ol>
+<li> your project must be developed in <i>two</i>
+programming languages Python and (C or C++) -
+note, not C and C++.
+
+You must develop two implementations of the <i>station server</i>,
+in two different programming languages.
+The two implementations must perform identically - as a client of these servers
+you should not be able to tell (or care) what programming language is being used.
+<p></p>
+</li>
+
+<li> you should employ the core networking functions
+(methods, modules, libraries,...)
+of your chosen programming languages and not employ specific 3rd-party
+frameworks or resources to complete large parts of the project.
+
+Specifically,
+you must not
+use Python's <i>http.server</i> module (even though it is a standard module),
+or use C++'s Boost library.
+<br>
+
+The learning in this project comes from developing an understanding of
+how an operating system's system calls,
+and programming languages' standard libraries,
+may be used to address these types of problems.
+
+There is far less learning (or a different type of learning)
+required in just combining existing libraries and modules
+to solve this problem.
+
+<b>If in doubt, please ask.</b>
+<p></p>
+</li>
+
+<li> your project will be marked on either Linux or Apple macOS.
+Your project does not have to work on both operating systems
+(though that should not be difficult).
+<br>
+<b>Clearly indicate in your submission which operating system you used.</b>
+<p></p>
+</li>
+</ol>
+<p></p>
+
+
+<h4>Project inputs</h4>
+
+See the
+<a href="https://teaching.csse.uwa.edu.au/units/CITS3002/project2024/getting-started.php"><span style="font-size: 1.0em; color: blue;"><b>Getting Started</b></span></a>
+page for an example of a simple 4-station network.
+While your servers will need to read in and parse the contents of the timetable files,
+you can assume that all their contents are correct
+(time-formats are correct, departure times precede arrival times,
+destination station names exist, etc).
+<p></p>
+
+<p>
+The <i>Getting Started</i> page provides a small number of helpful
+shellscripts to generate and execute your transport networks
+(you do not have to use these shellscripts if you wish to manage these steps yourself).
+
+One shellscript extracts necessary information from downloaded
+Transperth GTFS datafiles,
+but you should not attempt to use such a large dataset until
+you have tested your project on a much smaller transport network.
+</p>
+
+<p>
+<span style="font-size: 1.0em; color: red;"><b>
+You can define your own simple transport networks for testing your servers;
+just invent some station names,
+and timetable information for buses connecting the servers.
+
+You do not need to use the full set of Transperth GTFS files to start the project.
+</b></span>
+</p>
+
+<p>&nbsp;</p>
+<p>
+</p><center>
+    <hr width="80%" noshade="noshade" size="1">
+</center>
+<p></p>
+
+<h4>Important dates and project submission</h4>
+
+<ol>
+<li>
+The project contributes <b>40%</b> of your mark in CITS3002 this semester
+<p></p>
+</li>
+
+<li>
+The project is to be completed by teams of between
+<b>one and four student</b>s.
+
+You may discuss general ideas with other students,
+but you may not share code from your developed solution.
+You may use material found in books or tutorials
+(either physical or online)
+but <b>must</b> cite the sources of such material.
+<p></p>
+</li>
+
+<li>
+The project's deadline is <b>11:59pm Friday 17th May</b> (end of week 11).
+By this deadline submit all source code files and
+(optionally, any new) scripts that you wish to be assessed.
+Do not submit any of the original Transperth datafiles or station timetable files.
+<p></p>
+
+<p>
+Submit your work via
+<a href="https://secure.csse.uwa.edu.au/run/cssubmit">cssubmit</a>.
+<br>
+Ensure that each submitted file contains, as a comment,
+and <b>the names and student numbers of each team member</b>.
+</p>
+</li>
+
+<!--
+<li>
+It is anticipated that you will
+undertake the project on your home or laptop computers,
+running macOS or Linux,
+either natively or on Microsoft's Windows-10 using Windows Subsystem for Linux (WSL).
+Although rather slow,
+you may prefer to develop your project on a computer in CSSE laboratories over
+<a href="https://www.uwa.edu.au/library/learning-online">UWA's implementation of UniDesk</a>.
+Please report any difficulties you have in accessing a computer for the project.
+</p>
+</li>
+-->
+
+</ol>
+<p></p>
+
+
+<h4>Project demonstration</h4>
+
+Your team must also arrange a demonstration of your software,
+for <b>up to 30 minutes, in week 12 (or possibly week 13)</b>.
+The role of the demonstration is for you to demonstrate how much of the
+project's goals you have met, and to answer questions to demonstrate your
+understanding. It is not essential for all team members to be at your
+demonstration, but ensure that those attending will be able to represent the
+team.
+<p></p>
+
+A booking sheet will be provided closer to the deadline.
+During the demonstration, your team should:
+<p></p>
+
+<p>
+</p><ul>
+<li> briefly describe design decisions and assumptions
+    that you have made in your project.  You must clearly
+    describe your design choices,
+    explain how your project works,
+    and identify any known weaknesses with your approach or its implementation.
+
+</li><li> re-compile your programs,
+    and initialize and invoke the two server programs.
+    Describe the contents of necessary directories and files.
+
+</li><li> demonstrate, through a small number of examples,
+    how someone may use your software system.
+
+</li><li> do not prepare a PowerPoint-style presentation.
+</li></ul>
+<p></p>
+
+
+
+<a name="rubric">
+</a><div class="blueblock"><a name="rubric">
+
+<h4>Marking rubric (/40 marks)</h4>
+
+<b>Common marks for all team members - 30 marks:</b>
+
+<ol>
+<li> <b>5 marks</b><br>
+Implementation of station-server processes in two programming languages,
+employing (specifically) the standard Berkeley socket networking features
+provided by each language, with no reliance on a shared file-system or other
+inter-process communication mechanisms.
+</li>
+
+<li> <b>5 marks</b><br>
+Ability to receive a new TCP connection from a client (such as a
+web-browser, or curl), receiving a request written in simple HTTP, and
+replying to the same client using simple HTTP and HTML.
+</li>
+
+<li> <b>5 marks</b><br>
+Ability to establish a UDP communication endpoint, used to exchange
+datagrams with neighbouring stations, and to communicate to (only) the UDP
+ports of neighbouring stations.
+</li>
+
+<li> <b>5 marks</b><br>
+Ability to read a station's timetable file, storing it in a suitable
+data-structure, which is accessed for each query;  ability to detect that a
+timetable file has changed, to delete/dispose of the previous information,
+and move to using the new information.
+</li>
+
+<li> <b>5 marks</b><br>
+Design and implementation of a simple programming language independent
+protocol to exchange queries, responses, and (possibly) control information
+between stations.
+</li>
+
+<li> <b>5 marks</b><br>
+Ability to find a valid (but not necessarily optimal) route between origin
+and destination stations, for varying sized transport-networks of 2, 3, 5,
+10, and 20 stations (including transport-networks involving cycles), with no
+station attempting to collate information about the whole transport-network;
+ability to support multiple, concurrent queries from different clients.
+Ability to detect and report when a valid route does not exist.
+<p>
+</p></li>
+</ol>
+
+<!--
+<li> <b>5 marks</b><br>
+Use of sound programming practices, including
+consistent indentation of source-code,
+use of significant and descriptive comments,
+meaningful choice and use of identifiers and parameters,
+minimal use of global variables or state,
+use of each language's scoping facilities (such as separate files, nested
+functions/methods) to restrict access to data and functions/methods,
+detecting and reporting errors returned from system- and library functions/methods,
+and
+citations made to written and online resources directly employed in your project.
+</li>
+-->
+
+<b><span style="color: red;">Updated</span> An individual component - 10 marks:</b>
+</a><ol start="7"><a name="rubric">
+
+</a><li><a name="rubric"> 
+A piece of reflective writing, at most one A4 page long (min 11 point font),
+reflecting on what you have learnt in this project.
+Your piece should comment on:
+<p></p>
+<p>
+</p><ul>
+<li> how significant, and how successful, was your initial design process?
+</li><li> what did you learn most from the project?
+</li><li> what was the most difficult part of the project, and how did you address the problems?
+</li><li> what knowledge or aspects from the project might you re-use in the next couple of years?
+</li></ul>
+<p></p>
+
+<p>
+Submit a single file,
+either an MS-Word document (named reflection.docx) or
+a PDF file (named reflection.pdf), to <i>cssubmit</i>.
+Do not submit the file as part of an archive - just submit the correctly named file.
+
+Every student should submit their own file to their own cssubmit account
+(even if your account is the one receiving the whole project team's submission).
+</p>
+</a><p><a name="rubric">
+The UWA StudySmarter service has a succinct guide
+</a><a href="https://www.uwa.edu.au/students/-/media/Project/UWA/UWA/Students/Docs/STUDYSmarter/A7-Reflective-writing.pdf">
+on reflective writing</a>.
+
+</p></li>
+
+</ol>
+
+</div>
+
+<p></p>
+
+
+
+<h4>Clarifications</h4>
+
+Please post requests for clarification about any aspect of the project to
+<a href="https://secure.csse.uwa.edu.au/run/help3002"><i>help3002</i></a>
+so that all students may remain equally informed.
+<br>
+Clarifications will be also added to the
+<a href="https://teaching.csse.uwa.edu.au/units/CITS3002/project2024/clarifications.php"><b>project clarifications</b></a> webpage.
+<p></p>
+
+<p>
+</p><center>
+    <hr width="80%" noshade="noshade" size="1">
+</center>
+<p></p>
+
+Good luck,
+<p></p>
+Chris McDonald<br>
+April 2024.
+<p></p>
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+</div>
+
+<div id="footercontainer">
+    <div class="internal">
+
+<table style="color: #666666; margin: 0.5em 0 0 0.0em; line-height: 120%;"><tbody><tr>
+
+<td style="vertical-align: top; border-right: 2px solid #aaaaaa; padding-right: 1em;">
+    <a href="https://www.uwa.edu.au/">The University of Western Australia</a><br>
+    <br>
+    <a href="https://www.uwa.edu.au/schools/Physics-Mathematics-Computing/Department-of-Computer-Science-and-Software-Engineering">Computer Science and Software Engineering</a><br>
+    <br>
+    CRICOS Code: 00126G
+</td>
+
+<td style="vertical-align: top;"><a href="https://www.uwa.edu.au/schools/Physics-Mathematics-Computing/Department-of-Computer-Science-and-Software-Engineering">
+
+<img src="CITS3002%20Computer%20Networks_files/csseduck.png">
+
+</a></td><td style="vertical-align: top;">
+    Presented by <a href="mailto:Chris.McDonald@uwa.edu.au?subject=re: CITS3002 Computer Networks">Chris.McDonald@uwa.edu.au</a><br>
+
+</td>
+</tr></tbody></table>
+
+    </div>
+</div>
+
+
+
+</body></html>
